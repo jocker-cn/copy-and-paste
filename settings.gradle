@@ -1,2 +1,4 @@
 rootProject.name = 'copy-and-paste'
+include 'cap-core'
+include 'cap-support'
 
