@@ -4,11 +4,23 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.BooleanSupplier;
 
+/**
+ * {@link EnhanceLock} 的ReentrantLock实现
+ *
+ * @author Joker
+ * @date 2022/7/31 17:04
+ * @since 0.0.1
+ */
 public class ReentrantLockSupport extends AbstractLock {
 
     private final ReentrantLock REENTRANT_LOCK;
 
     public ReentrantLockSupport(ReentrantLock reentrantLock) {
+        this(reentrantLock, null);
+    }
+
+    public ReentrantLockSupport(ReentrantLock reentrantLock, BooleanSupplier booleanSupplier) {
+        super(booleanSupplier);
         REENTRANT_LOCK = reentrantLock;
     }
 
